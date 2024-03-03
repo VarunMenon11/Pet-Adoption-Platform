@@ -13,8 +13,28 @@ export class LoginPageComponent {
   constructor(private router: Router) {}
 
   login() {
-    // Your authentication logic here
+    // Your login logic here
     // For simplicity, let's assume login is successful
-    this.router.navigateByUrl('/welcome');
+    console.log('Login successful');
+
+    // Placeholder condition for checking if the user is an admin
+    const isAdmin = this.username === 'admin'; // You can replace this condition with your actual logic
+
+    // Redirect to the appropriate page based on user type
+    if (isAdmin) {
+      this.router.navigateByUrl('/admin');
+    } else {
+      // Redirect to the welcome page after successful login
+      this.router.navigateByUrl('/welcome');
+    }
+  }
+
+  switchToAdmin() {
+    // Redirect to the admin page
+    this.router.navigateByUrl('/admin');
   }
 }
+
+
+
+

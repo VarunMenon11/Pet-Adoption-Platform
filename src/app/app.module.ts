@@ -11,6 +11,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { PetsComponent } from './pets/pets.component';
 import { AdoptionCentersComponent } from './adoption-centers/adoption-centers.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
     RegistrationPageComponent,
     PetsComponent,
     AdoptionCentersComponent,
-    ProfileComponent
+    ProfileComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
