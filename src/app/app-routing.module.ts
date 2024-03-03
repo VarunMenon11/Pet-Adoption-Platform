@@ -7,6 +7,8 @@ import { PetsComponent } from './pets/pets.component';
 import { AdoptionCentersComponent } from './adoption-centers/adoption-centers.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminPageComponent } from './admin-page/admin-page.component'; // Import the newly created AdminPageComponent
+import { AdminWelcomePageComponent } from './admin-welcome-page/admin-welcome-page.component'; // Import the AdminWelcomePageComponent
+
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
@@ -17,7 +19,8 @@ const routes: Routes = [
   { path: 'pets', component: PetsComponent },
   { path: 'adoption-centers', component: AdoptionCentersComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'admin', component: AdminPageComponent }, // Define route for the admin page
+  { path: 'admin', component: AdminPageComponent }, 
+  { path: 'admin/welcome', component: AdminWelcomePageComponent }
 ];
 
 @NgModule({
@@ -25,5 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
 
