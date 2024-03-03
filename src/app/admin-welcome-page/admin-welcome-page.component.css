@@ -1,0 +1,42 @@
+
+
+  /* Add this CSS to your global styles or component styles */
+
+.admin-welcome-container {
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    overflow: hidden;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  .navbar button {
+    float: right; /* Align the Edit button to the right */
+    display: block;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    padding: 18px 30px;
+    margin-right: 20px; /* Add some margin between the Edit button and navigation links */
+    cursor: pointer;
+  }
+  
+  .navbar a:hover,
+  .navbar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .active {
+    background-color: #0056b3;
+  }
+  
