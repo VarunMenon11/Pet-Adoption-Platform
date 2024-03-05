@@ -1,13 +1,45 @@
-<div class="background-container" style="background-image: url('pets_image.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
-    <div class="pets-container">
-      <div class="pet" *ngFor="let pet of pets">
-        <img [src]="pet.image_path" alt="Pet">
-        <div class="description">
-          <h3>{{ pet.name }}</h3>
-          <p><strong>Availability:</strong> {{ pet.availability }}</p>
-          <p><strong>Location:</strong> {{ pet.location }}</p>
-          <p><strong>Vaccination Info:</strong> {{ pet.vaccinationInfo }}</p>
-        </div>
+<!-- admin-pet.component.html -->
+<div class="background-container" style="background-image: url('admin-pet.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="pets-container">
+    <!-- Display existing pets -->
+    <div class="pet" *ngFor="let pet of pets">
+      <img [src]="pet.image_path" alt="Pet">
+      <div class="description">
+        <h3>{{ pet.name }}</h3>
+        <p><strong>Availability:</strong> {{ pet.availability }}</p>
+        <p><strong>Location:</strong> {{ pet.location }}</p>
+        <p><strong>Vaccination Info:</strong> {{ pet.vaccination_info }}</p>
       </div>
     </div>
     
+    <!-- Button to add a new pet -->
+    <button class="add-pet-button" (click)="addPet()">Add Pet</button>
+
+    <!-- Form for adding a new pet -->
+    <div *ngIf="showAddForm">
+      <form (submit)="submitForm()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" [(ngModel)]="newPet.name" required>
+        </div>
+        <div class="form-group">
+          <label for="availability">Availability:</label>
+          <input type="text" id="availability" name="availability" [(ngModel)]="newPet.availability" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" [(ngModel)]="newPet.location" required>
+        </div>
+        <div class="form-group">
+          <label for="vaccination_info">Vaccination Info:</label>
+          <input type="text" id="vaccination_info" name="vaccination_info" [(ngModel)]="newPet.vaccination_info" required>
+        </div>
+        <div class="form-group">
+          <label for="image_path">Image Path:</label>
+          <input type="text" id="image_path" name="image_path" [(ngModel)]="newPet.image_path" required>
+        </div>
+        <button type="submit">Add Pet</button>
+      </form>
+    </div>
+  </div>
+</div>

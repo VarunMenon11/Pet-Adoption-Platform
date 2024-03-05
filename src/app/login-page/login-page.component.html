@@ -11,6 +11,7 @@
           <input type="password" id="password" name="password" [(ngModel)]="password" required>
         </div>
         <button type="submit">Login</button>
+        <p *ngIf="loginError" class="error-message">Invalid username or password. Please try again.</p>
         <p>First time logging in? <a routerLink="/register" style="color: #f9f9f9; font-weight: bold;">Register here</a></p>
         <p>Switch to admin entry? <button type="button" (click)="switchToAdmin()">Admin</button></p>
       </form>

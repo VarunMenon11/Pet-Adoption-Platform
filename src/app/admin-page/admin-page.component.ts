@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http'; // Import HttpClient for maki
 export class AdminPageComponent {
   adminUsername: string = '';
   adminPassword: string = '';
+  loginError: boolean = false;
+
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -28,6 +30,8 @@ export class AdminPageComponent {
           // Admin login failed
           console.error('Error logging in:', error);
           // Handle error, e.g., show error message to the user
+          this.loginError = true; // Set loginError to true when login fails
+
         }
       );
   }
