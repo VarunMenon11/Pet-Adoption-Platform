@@ -1,102 +1,105 @@
+.form-group{
+  color: white;
+}
+
 .pets-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .pet {
-    width: 400px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pet img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  .description {
-    color: #333;
-  }
-  
-  .description h3 {
-    margin-top: 0;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; 
-    background-image: url('admin-pet.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pet {
+  width: 400px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f931;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.description {
+  color: #333;
+}
+
+.description h3 {
+  margin-top: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+  background-image: url('admin-pet.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .add-pet-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px; /* Position button on the bottom right corner */
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #0037ae;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: hidden; /* Ensure text doesn't overflow */
-  text-align: center; /* Center text horizontally */
+position: absolute;
+bottom: 20px;
+right: 20px; /* Position button on the bottom right corner */
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background-color: #0037ae;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+overflow: hidden; /* Ensure text doesn't overflow */
+text-align: center; /* Center text horizontally */
 }
 
 .add-pet-button:hover {
-  transform: scale(1.2) rotate(360deg);
-  background-color: #0056b3;
+transform: scale(1.2) rotate(360deg);
+background-color: #0056b3;
 }
 
 .plus-sign {
-  font-size: 36px;
+font-size: 36px;
+color: white;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.add-pet-button:hover .plus-sign {
+opacity: 0;
+}
+.button-text {
+position: absolute;
+bottom: -20px; /* Position text below the button */
+left: 50%;
+transform: translateX(-50%);
+font-size: 3px;
+color: white;
+opacity: 0; /* Initially hidden */
+transition: all 0.3s ease;
+}
+
+.button-text.visible {
+opacity: 1;} /* Show text on hover*/
+
+
+
+.button-text {
+  font-size: 12px; /* Adjust the font size as needed */
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.add-pet-button:hover .plus-sign {
-  opacity: 0;
-}
-.button-text {
-  position: absolute;
-  bottom: -20px; /* Position text below the button */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 3px;
-  color: white;
   opacity: 0; /* Initially hidden */
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-.button-text.visible {
-  opacity: 1;} /* Show text on hover*/
+.add-pet-button:hover .button-text {
+  opacity: 1; /* Show text on hover */
+}
 
 
-
-  .button-text {
-    font-size: 12px; /* Adjust the font size as needed */
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
-  }
-  
-  .add-pet-button:hover .button-text {
-    opacity: 1; /* Show text on hover */
-  }
-  
-
-  

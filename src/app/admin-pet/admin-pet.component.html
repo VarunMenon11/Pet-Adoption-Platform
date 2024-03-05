@@ -1,14 +1,14 @@
 <!-- admin-pet.component.html -->
 <div class="background-container" style="background-image: url('admin-pet.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
-  <div class="pets-container">
+  <div class="pets-container" style="color: white;">
     <!-- Display existing pets -->
     <div class="pet" *ngFor="let pet of pets">
       <img [src]="pet.image_path" alt="Pet">
       <div class="description">
-        <h3>{{ pet.name }}</h3>
-        <p><strong>Availability:</strong> {{ pet.availability }}</p>
-        <p><strong>Location:</strong> {{ pet.location }}</p>
-        <p><strong>Vaccination Info:</strong> {{ pet.vaccination_info }}</p>
+        <h3 style="color: white;">{{ pet.name }}</h3>
+        <p style="color: white;"><strong>Availability:</strong> {{ pet.availability }}</p>
+        <p style="color: white;"><strong>Location:</strong> {{ pet.location }}</p>
+        <p style="color: white;"><strong>Vaccination Info:</strong> {{ pet.vaccination_info }}</p>
       </div>
     </div>
     
@@ -43,3 +43,5 @@
     </div>
   </div>
 </div>
+
+
