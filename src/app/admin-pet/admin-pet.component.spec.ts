@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdoptionCenterComponent } from './adoption-centers.component';
+import { AdminPetComponent } from './admin-pet.component';
 
-describe('AdoptionCentersComponent', () => {
-  let component: AdoptionCenterComponent;
-  let fixture: ComponentFixture<AdoptionCenterComponent>;
+describe('AdminPetComponent', () => {
+  let component: AdminPetComponent;
+  let fixture: ComponentFixture<AdminPetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdoptionCenterComponent ]
+      declarations: [ AdminPetComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdoptionCenterComponent);
+    fixture = TestBed.createComponent(AdminPetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

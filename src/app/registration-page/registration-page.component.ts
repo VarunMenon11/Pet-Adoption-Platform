@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,13 +12,23 @@ export class RegistrationPageComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   register() {
-    // Your registration logic here
-    // For simplicity, let's assume registration is successful
-    console.log('Registration successful');
-    // Navigate back to the login page
-    this.router.navigateByUrl('/login');
+    const userData = {
+      fullname: this.fullname,
+      email: this.email,
+      password: this.password
+    };
+    this.http.post<any>('http://localhost:3000/register', userData)
+      .subscribe(
+        (response) => {
+          console.log('Registration successful');
+          this.router.navigateByUrl('/login');
+        },
+        (error) => {
+          console.error('Error registering user:', error);
+        }
+      );
   }
 }

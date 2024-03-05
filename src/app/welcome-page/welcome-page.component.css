@@ -1,24 +1,33 @@
 /* Add this CSS to your global styles or component styles */
 
 .navbar {
-    background-color: #007bff;
-    overflow: hidden;
-  }
-  
-  .navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    background-color: #0056b3;
-  }
-  
-  .active {
-    background-color: #0056b3;
-  }
-  
+  background-color: #007bff;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #0056b3;
+}
+
+.active {
+  background-color: #0056b3;
+}
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+  background-image: url('welcome_page.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

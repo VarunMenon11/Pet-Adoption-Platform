@@ -1,0 +1,10 @@
+<div class="background-container" style="background-image: url('pexels-caio-69371.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <body><div class="adoption-center" *ngFor="let center of adoptionCenters">
+    <div class="center-details" >
+      <h2 style="font-size: larger; color: white;">{{ center.name }}</h2>
+      <p style="font-size: larger; color: white;"><strong>Location:</strong> {{ center.location }}</p>
+      <p style="font-size: larger; color: white;"><strong>Contact Details:</strong> {{ center.contact }}</p>
+      <p style="font-size: larger; color: white;"><strong>ID:</strong> {{ center.id }}</p>
+    </div>
+  </div>
+</body>

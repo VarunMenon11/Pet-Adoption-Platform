@@ -1,6 +1,7 @@
+<div class="background-container" style="background-image: url('dog-login.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
 <div class="admin-container">
     <h2>Admin Page</h2>
-    <form (ngSubmit)="submitAdminForm()">
+    <form (ngSubmit)="submitAdminForm()" #adminForm="ngForm">
       <div class="form-group">
         <label for="adminUsername">Admin Username</label>
         <input type="text" id="adminUsername" name="adminUsername" [(ngModel)]="adminUsername" required>
@@ -9,8 +10,11 @@
         <label for="adminPassword">Admin Password</label>
         <input type="password" id="adminPassword" name="adminPassword" [(ngModel)]="adminPassword" required>
       </div>
-      <button (click)="redirectToAdminWelcome()">Go to Admin Welcome Page</button>
-
+      <button type="submit">Admin Welcome Page</button>
     </form>
+    
   </div>
+  
+
+  
   

@@ -39,4 +39,14 @@
   .active {
     background-color: #0056b3;
   }
+  body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    background-image: url('welcome_page.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   

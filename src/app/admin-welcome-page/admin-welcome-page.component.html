@@ -1,16 +1,16 @@
-<div class="admin-welcome-container">
+<div class="background-container" style="background-image: url('welcome_page.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div class="admin-welcome-container" style="font-size: larger; color: white; ">
     <h2>Welcome to our Pet Adoption Platform!</h2>
     <nav class="navbar">
-      <a routerLink="/pets" routerLinkActive="active">Pets</a>
-      <a routerLink="/adoption-centers" routerLinkActive="active">Adoption Centers</a>
-      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a routerLink="/admin/pet" routerLinkActive="active">Pets</a>
+      <a routerLink="/admin/ac" routerLinkActive="active">Adoption Centers</a>
+      <a routerLink="/admin/pro" routerLinkActive="active">Profile</a>
       <button (click)="edit()">Edit</button> <!-- Add Edit button in the navigation bar -->
     </nav>
     <p>Find your new best friend and make a difference in their life.</p>
-    <blockquote>
+    <blockquote style="font-size: larger;">
       "Saving one animal will not change the world, but for that one animal, the world will change forever."
-      <footer>- Unknown</footer>
+      <footer>-Rajat and Varun</footer>
     </blockquote>
-    <router-outlet></router-outlet>
   </div>
   

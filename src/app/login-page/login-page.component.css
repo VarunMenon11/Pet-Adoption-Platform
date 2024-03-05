@@ -5,16 +5,18 @@
   }
   
   .login-container {
-    max-width: 400px;
+    width: 400px;
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f900;
+    color: white;
   }
   
   .form-group {
     margin-bottom: 15px;
+    padding-right: 20px;
   }
   
   label {
@@ -49,4 +51,13 @@
     font-size: 14px;
     margin-top: 5px;
   }
-  
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    background-image: url('dog-login.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
