@@ -1,46 +1,207 @@
 .adoption-center-container {
-    margin: 0 auto; /* Center the container horizontally */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Create columns with minimum width of 250px */
-    align-items: center;
+  width: 100%;
+  max-width: 1000px; /* Set maximum width for the container */
+  height: calc(100vh - 60px); /* Set fixed height to fill viewport minus button height */
+  overflow-y: auto; /* Add vertical scrollbar if needed */
+  padding: 10px; /* Add padding for spacing */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Display adoption centers in two columns */
+  grid-gap: 20px; /* Add gap between adoption centers */
+  max-width: 100
+  
+}
+.body{
+  background-image: url('admin-adoption.jpg');
+}
+.adoption-center {
+  width: 100%; /* Set adoption centers to fill container width */
+  border: 1px solid #cccccc92;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 10px; /* Add margin between adoption centers */
+}
+
+.adoption-center:hover {
+  transform: translateY(-5px);
+}
+
+.center-details {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  margin: 5px 0;
+  color: #6666667a;
+}
+
+.add-adoption-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Position button on the bottom right corner */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0037ae;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Ensure text doesn't overflow */
+  text-align: center; /* Center text horizontally */
+  z-index: 999; /* Ensure button appears on top of other elements */
+}
+
+.add-adoption-button:hover {
+  transform: scale(1.2) rotate(360deg);
+  background-color: #063f7b;
+}
+
+.plus-sign {
+  font-size: 36px;
+  color: rgb(12, 10, 10);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-adoption-button:hover .plus-sign {
+  opacity: 0;
+}
+
+.button-text {
+  position: absolute;
+  bottom: -20px; /* Position text below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3px;
+  color: rgb(12, 12, 12);
+  opacity: 0; /* Initially hidden */
+  transition: all 0.3s ease;
+}
+
+.button-text.visible {
+  opacity: 1;
+} /* Show text on hover */
+
+.button-text {
+  font-size: 12px; /* Adjust the font size as needed */
+  color: rgb(14, 13, 13);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.add-adoption-button:hover .button-text {
+  opacity: 1; 
+  font-size: large;
+  color: black;/* Show text on hover */
+}
+.add-adoption-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; /* Position button on the bottom right corner */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #c8cdd2;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Ensure text doesn't overflow */
+  text-align: center; /* Center text horizontally */
+}
+
+.add-adoption-button:hover {
+  transform: scale(1.2) rotate(360deg);
+  background-color: #d1d6db;
+}
+
+.plus-sign {
+  font-size: 36px;
+  color: rgb(13, 13, 13);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-adoption-button:hover .plus-sign {
+  opacity: 0;
+}
+
+.button-text {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: rgba(7, 7, 7, 0.295);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
   }
   
-  .adoption-center {
-    width: 400px; /* Set maximum width for the container */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    margin-top: 10px;
+.button-text.visible {
+  opacity: 1;
+  color: black;
+} /* Show text on hover*/
+
+  
+  .add-adoption-button:hover .button-text {
+    opacity: 1; /* Show text on hover */
   }
   
-  .adoption-center:hover {
-    transform: translateY(-5px);
+
+  .add-form-container {
+    margin-top: 20px;
   }
   
-  .center-details {
+  .add-form {
+    background-color: #f2f2f200;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
   }
   
-  h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
+  .form-group {
+    margin-bottom: 20px;
   }
   
-  p {
-    margin: 5px 0;
-    color: #666;
+  label {
+    display: block;
+    font-weight: bold;
   }
-  body {
-    font-family: Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; 
-    background-size: cover;
-    background-repeat: no-repeat;
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: rgba(255, 255, 255, 0.63);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
   }

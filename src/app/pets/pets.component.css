@@ -31,8 +31,7 @@
     margin: 0;
     display: flex;
     justify-content: center; 
-    background-image: url('pets_image.jpeg');
+    background-image: url('pets.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
 }
-  

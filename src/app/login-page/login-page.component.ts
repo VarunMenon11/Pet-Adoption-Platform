@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
   username: string = '';
   password: string = '';
+  loginError: boolean = false;
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -34,10 +36,14 @@ export class LoginPageComponent {
         } else {
           console.log('Login failed');
           // Handle login failure here, e.g., display an error message to the user
+          this.loginError = true; // Set loginError to true when login fails
+
         }
       }, error => {
         console.error('Error during login:', error);
         // Handle error here, e.g., display an error message to the user
+          this.loginError = true; // Set loginError to true when login fails
+
       });
   }
 

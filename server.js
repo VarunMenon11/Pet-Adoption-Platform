@@ -46,12 +46,12 @@ app.post('/admin/login', (req, res) => {
 });
 
 
-// Fetch all adoption centers from the database
+// Endpoint to fetch adoption center data
 app.get('/api/adoption-centers', (req, res) => {
     let sql = 'SELECT * FROM ADOPTIONTABLE';
     db.query(sql, (err, result) => {
         if (err) {
-            console.error('Error querying adoption center table:', err);
+            console.error('Error querying database:', err);
             return res.status(500).json({ success: false, message: 'Internal Server Error' });
         }
         res.json(result);
@@ -128,9 +128,26 @@ app.post('/register', (req, res) => {
     });
 });
 
+// Endpoint to add a new adoption center
+app.post('/api/adoption-centers', (req, res) => {
+    const { location, phone, pincode } = req.body;
+    const sql = 'INSERT INTO ADOPTIONTABLE (location, phone, pincode) VALUES (?, ?, ?)';
+    db.query(sql, [location, phone, pincode], (err, result) => {
+        if (err) {
+            console.error('Error adding adoption center:', err);
+            return res.status(500).json({ success: false, message: 'Internal Server Error' });
+        }
+        console.log('Adoption center added successfully');
+        res.status(200).json({ success: true, message: 'Adoption center added successfully' });
+    });
+});
+
+
 
 
 // Start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+

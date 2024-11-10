@@ -1,10 +1,37 @@
-<div class="background-container" style="background-image: url('pexels-caio-69371.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
-    <body><div class="adoption-center" *ngFor="let center of adoptionCenters">
-    <div class="center-details" >
-      <h2 style="font-size: larger; color: white;">{{ center.name }}</h2>
-      <p style="font-size: larger; color: white;"><strong>Location:</strong> {{ center.location }}</p>
-      <p style="font-size: larger; color: white;"><strong>Contact Details:</strong> {{ center.contact }}</p>
-      <p style="font-size: larger; color: white;"><strong>ID:</strong> {{ center.id }}</p>
+<div class="background-container" style="background-image: url('admin-adoption.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <body>
+    <div class="adoption-center-container">
+      <div class="adoption-center" *ngFor="let center of adoptionCenters">
+        <div class="center-details">
+          <h2 style="color: white;">{{ center.location }}</h2>
+          <p style="color: white;"><strong>Phone:</strong> {{ center.phone }}</p>
+          <p style="color: white;"><strong>Pincode:</strong> {{ center.pincode }}</p>
+        </div>
+      </div>
     </div>
+  </body>
+  <!-- Button for adding a new adoption center -->
+  <button class="add-adoption-button" (click)="addAdoption()" (mouseenter)="buttonHover = true" (mouseleave)="buttonHover = false">
+    <span class="plus-sign">+</span>
+    <span class="button-text">ADD Center</span>
+  </button>
+
+  <!-- Form for adding a new adoption center -->
+  <div *ngIf="showAddForm" class="add-form-container">
+    <form (submit)="submitForm()" class="add-form">
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" [(ngModel)]="newCenter.location" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="newCenter.phone" required>
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" [(ngModel)]="newCenter.pincode" required>
+      </div>
+      <button type="submit" class="submit-button">Add Center</button>
+    </form>
   </div>
-</body>
+</div>
