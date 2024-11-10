@@ -6,6 +6,8 @@ const cors = require('cors'); // Import the cors middleware
 const app = express();
 const port = 3000;
 
+app.use(express.static('public')); // Assuming your static files are in a 'public' directory
+
 // Middleware
 app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
@@ -14,9 +16,14 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '12345',
+    password: 'ben11022003',
     database: 'angular_project'
 });
+
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+
 
 app.post('/admin/login', (req, res) => {
     const { adminUsername, adminPassword } = req.body;
@@ -67,26 +74,26 @@ app.post('/login', (req, res) => {
   
     // Query the database to find the user by username
     db.query('SELECT * FROM LOGIN WHERE USERNAME = ?', [username], (error, results) => {
-      if (error) {
-        console.error('Error querying database:', error);
-        return res.status(500).json({ success: false, message: 'Internal Server Error' });
-      }
+        if (error) {
+            console.error('Error querying database:', error);
+            return res.status(500).json({ success: false, message: 'Internal Server Error' });
+        }
   
-      if (results.length === 0) {
-        // Username not found
-        return res.status(401).json({ success: false, message: 'Invalid username or password' });
-      }
+        if (results.length === 0) {
+            // Username not found
+            return res.status(401).json({ success: false, message: 'Invalid username or password' });
+        }
   
-      const user = results[0];
+        const user = results[0];
   
-      // Check password
-      if (user.PASSWORD !== password) {
-        // Password does not match
-        return res.status(401).json({ success: false, message: 'Invalid username or password' });
-      }
+        // Check password
+        if (user.PASSWORD !== password) {
+            // Password does not match
+            return res.status(401).json({ success: false, message: 'Invalid username or password' });
+        }
   
-      // Login successful
-      res.status(200).json({ success: true, message: 'Login successful' });
+        // Login successful
+        res.status(200).json({ success: true, message: 'Login successful' });
     });
 });
 
